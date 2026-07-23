@@ -6,9 +6,15 @@ An invisible controller widget for [Übersicht](http://tracesof.net/uebersicht/)
 
 ## What it looks like
 
-The controller renders nothing itself. The image below shows the effect: the same companion widget (Memory) themed by the controller under each of the four schemes.
+The controller renders nothing itself. The images below show the effect on the two axes.
+
+**Scheme** — the same companion widget (Memory) themed under each of the four schemes:
 
 ![The Memory widget under each scheme: Monochrome, iOS, macOS, Apple Classic](screenshots/screenshot.png)
+
+**Mode** — the controller flips every widget's ink between white and black to match your desktop, so it stays legible over any wallpaper (a dark desktop gets white text, a light desktop gets black text) while the accent colors stay put:
+
+![The Memory widget with white text on a dark desktop and black text on a light desktop](screenshots/light-dark.png)
 
 ## How it works
 
