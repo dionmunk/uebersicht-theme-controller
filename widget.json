@@ -1,0 +1,6 @@
+{
+    "name": "Theme Controller",
+    "description": "Invisible widget that publishes theme CSS variables (scheme + light/dark mode) for the other uebersicht-* widgets to consume.",
+    "author": "Dion Munk",
+    "email": "dion@dionmunk.com"
+}

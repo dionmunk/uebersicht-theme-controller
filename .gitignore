@@ -1,0 +1,7 @@
+# OS
+.DS_Store
+.DS_Store?
+__MACOSX
+
+# Compiled Swift helper (rebuilt on first run by darkness.sh)
+theme-controller.widget/lib/menubar-darkness
