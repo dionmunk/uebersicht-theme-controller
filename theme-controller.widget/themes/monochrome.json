@@ -1,0 +1,7 @@
+{
+  "--series-primary": "rgba(var(--ink), 1)",
+  "--series-secondary": "rgba(var(--ink), .5)",
+  "--series-tertiary": "rgba(var(--ink), .35)",
+  "--series-quaternary": "rgba(var(--ink), .2)",
+  "--apple-blue": "rgba(var(--ink), .5)"
+}

@@ -50,6 +50,22 @@ These widgets consume the tokens and are themed by this controller (each also wo
 - [uebersicht-github-contributions](https://github.com/dionmunk/uebersicht-github-contributions)
 - [uebersicht-now-playing](https://github.com/dionmunk/uebersicht-now-playing)
 
+## Themes
+
+Each scheme lives in its own plain JSON file under `themes/`. They are kept as **data** (not code) on purpose: Übersicht treats every `.js`/`.jsx`/`.coffee` file in a widget folder as its own widget, so code-based theme files would clutter the widget list. `.json` files are ignored by that scan.
+
+```
+theme-controller.widget/
+├── index.coffee           # config, mode/neutral logic, applies tokens to :root
+└── themes/
+    ├── monochrome.json
+    ├── macos.json
+    ├── apple-classic.json
+    └── ios.json
+```
+
+At startup the widget fetches the active scheme's file (mapped from its name: `iOS` → `themes/ios.json`, `Apple Classic` → `themes/apple-classic.json`) and merges it over the mode-driven neutrals. A scheme file is just a map of `"--token": "value"`. Most entries are static hex or `var()` references; monochrome derives its shades from the current mode via `rgba(var(--ink), α)` — the widget publishes the mode's ink triplet as `--ink` for exactly this. To add a scheme, drop a `<name>.json` in `themes/` and set `scheme` to its name.
+
 ## Options
 
 At the top of `index.coffee`:
