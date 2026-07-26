@@ -47,6 +47,7 @@ These widgets consume the tokens and are themed by this controller (each also wo
 - [uebersicht-bluetooth-battery-status](https://github.com/dionmunk/uebersicht-bluetooth-battery-status)
 - [uebersicht-weather](https://github.com/dionmunk/uebersicht-weather)
 - [uebersicht-news](https://github.com/dionmunk/uebersicht-news)
+- [uebersicht-stocks](https://github.com/dionmunk/uebersicht-stocks)
 - [uebersicht-github-contributions](https://github.com/dionmunk/uebersicht-github-contributions)
 - [uebersicht-now-playing](https://github.com/dionmunk/uebersicht-now-playing)
 
