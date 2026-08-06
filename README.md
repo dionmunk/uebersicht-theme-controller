@@ -117,7 +117,7 @@ At the top of `index.coffee`:
 
 ```coffeescript
   # Which scheme's palette + accents to apply.
-  scheme: 'Monokai'      # 'monochrome' | 'macOS' | 'Apple Classic' | 'iOS' | 'Monokai'
+  scheme: 'iOS'          # 'monochrome' | 'macOS' | 'Apple Classic' | 'iOS' | 'Monokai'
                          # | 'Monokai Pro' | 'Dracula' | 'Solarized' | 'Nord Frost'
                          # | 'Nord Aurora' | 'Tokyo Night'
 
