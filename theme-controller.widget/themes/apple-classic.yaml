@@ -1,0 +1,14 @@
+# Apple Classic
+# The 1977 rainbow-logo colors (green / yellow / orange / red / purple / blue).
+
+green:  "#61BB46"
+yellow: "#FDB827"
+orange: "#F5821F"
+red:    "#E03A3E"
+purple: "#963D97"
+blue:   "#009DDC"
+pink:   "#C64191"   # a magenta to round out the set (the logo has no pink)
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue

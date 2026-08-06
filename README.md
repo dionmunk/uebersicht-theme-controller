@@ -8,9 +8,11 @@ An invisible controller widget for [Übersicht](http://tracesof.net/uebersicht/)
 
 The controller renders nothing itself. The images below show the effect on the two axes.
 
-**Scheme** — the same companion widget (Memory) themed under each of the four schemes:
+**Scheme** — the same companion widget (Memory) under four of the bundled schemes:
 
-![The Memory widget under each scheme: Monochrome, iOS, macOS, Apple Classic](screenshot.png)
+![The Memory widget under the Monochrome, Monokai, Dracula and Nord Frost schemes](screenshot.png)
+
+Eleven ship with the widget: Monochrome, macOS, Apple Classic, iOS, Monokai, Monokai Pro, Dracula, Solarized, Nord Frost, Nord Aurora and Tokyo Night.
 
 **Mode** — the controller flips every widget's ink between white and black to match your desktop, so it stays legible over any wallpaper (a dark desktop gets white text, a light desktop gets black text) while the accent colors stay put:
 
@@ -49,23 +51,65 @@ These widgets consume the tokens and are themed by this controller (each also wo
 - [uebersicht-news](https://github.com/dionmunk/uebersicht-news)
 - [uebersicht-stocks](https://github.com/dionmunk/uebersicht-stocks)
 - [uebersicht-github-contributions](https://github.com/dionmunk/uebersicht-github-contributions)
-- [uebersicht-now-playing](https://github.com/dionmunk/uebersicht-now-playing)
+- [uebersicht-music](https://github.com/dionmunk/uebersicht-music)
+- [uebersicht-visualizer](https://github.com/dionmunk/uebersicht-visualizer)
+- [uebersicht-layout-controller](https://github.com/dionmunk/uebersicht-layout-controller)
 
 ## Themes
 
-Each scheme lives in its own plain JSON file under `themes/`. They are kept as **data** (not code) on purpose: Übersicht treats every `.js`/`.jsx`/`.coffee` file in a widget folder as its own widget, so code-based theme files would clutter the widget list. `.json` files are ignored by that scan.
+Each scheme lives in its own plain YAML file under `themes/`. They are kept as **data** (not code) on purpose: Übersicht treats every `.js`/`.jsx`/`.coffee` file in a widget folder as its own widget, so code-based theme files would clutter the widget list. YAML is ignored by that scan, and unlike JSON it can carry comments and attribution.
 
 ```
 theme-controller.widget/
 ├── index.coffee           # config, mode/neutral logic, applies tokens to :root
 └── themes/
-    ├── monochrome.json
-    ├── macos.json
-    ├── apple-classic.json
-    └── ios.json
+    ├── _example.yaml      # annotated template to copy
+    ├── monochrome.yaml
+    ├── macos.yaml
+    ├── apple-classic.yaml
+    ├── ios.yaml
+    ├── monokai.yaml
+    ├── monokai-pro.yaml
+    ├── dracula.yaml
+    ├── solarized.yaml
+    ├── nord-frost.yaml
+    ├── nord-aurora.yaml
+    └── tokyo-night.yaml
 ```
 
-At startup the widget fetches the active scheme's file (mapped from its name: `iOS` → `themes/ios.json`, `Apple Classic` → `themes/apple-classic.json`) and merges it over the mode-driven neutrals. A scheme file is just a map of `"--token": "value"`. Most entries are static hex or `var()` references; monochrome derives its shades from the current mode via `rgba(var(--ink), α)` — the widget publishes the mode's ink triplet as `--ink` for exactly this. To add a scheme, drop a `<name>.json` in `themes/` and set `scheme` to its name.
+**A theme is just a short list of named colors.** You do not write tokens, `rgba()` or role
+wiring; the widget derives all of that. In practice a theme is about seven lines:
+
+```yaml
+red:    "#F92672"
+orange: "#FD971F"
+yellow: "#E6DB74"
+green:  "#A6E22E"
+blue:   "#66D9EF"
+purple: "#AE81FF"
+pink:   "#F92672"
+```
+
+From those the widget publishes each color plus its RGB channel triplet (`--red` and
+`--red-ch`), then maps the shared role contract onto them: the status ramp
+(`--status-ok` / `-warn` / `-elevated` / `-critical` from green / yellow / orange / red),
+the four data series (`--series-primary` through `--series-quaternary` from red / orange /
+yellow / green), and the matching translucent `-fill` variants. Because every scheme maps
+the same roles the same way, switching scheme reskins every companion widget with no edits
+anywhere else.
+
+Two optional keys go further. `background` tints the translucent panels with the theme's own
+background color instead of the neutral tint, and `background-opacity` (0–1, default `.3`)
+sets how solid that is. `primary` and `secondary` name which colors act as the accent pair.
+
+Monochrome is the one exception: it has no hues at all. It ships as an empty palette, which
+makes the widget fall back to ink-only roles, so every token is the current mode's ink at a
+stepped opacity and the whole scheme flips for free when the mode does.
+
+At startup the widget fetches the active scheme's file, mapping its name to a slug by
+lowercasing and replacing spaces with hyphens (`iOS` → `themes/ios.yaml`, `Apple Classic` →
+`themes/apple-classic.yaml`), and merges it over the mode-driven neutrals. To add a scheme,
+copy `_example.yaml`, pick your colors, and set `scheme` to its name.
 
 ## Options
 
@@ -73,7 +117,9 @@ At the top of `index.coffee`:
 
 ```coffeescript
   # Which scheme's palette + accents to apply.
-  scheme: 'iOS'          # 'monochrome' | 'macOS' | 'Apple Classic' | 'iOS'
+  scheme: 'Monokai'      # 'monochrome' | 'macOS' | 'Apple Classic' | 'iOS' | 'Monokai'
+                         # | 'Monokai Pro' | 'Dracula' | 'Solarized' | 'Nord Frost'
+                         # | 'Nord Aurora' | 'Tokyo Night'
 
   # How light/dark mode is chosen.
   modeSource: 'wallpaper'   # 'wallpaper' (match the menu-bar tint) | 'light' | 'dark'

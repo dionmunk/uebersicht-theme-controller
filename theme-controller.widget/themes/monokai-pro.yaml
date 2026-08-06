@@ -1,0 +1,17 @@
+# Monokai Pro
+# The Monokai Pro palette (default filter), created by Wimer Hazenberg (https://monokai.pro).
+
+red:    "#FF6188"   # signature pink-red; doubles as this theme's pink
+orange: "#FC9867"
+yellow: "#FFD866"
+green:  "#A9DC76"
+blue:   "#78DCE8"   # Monokai Pro's cyan fills the blue role (network upload)
+purple: "#AB9DF2"
+pink:   "#FF6188"
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue
+
+# Optional: tint the translucent panels with Monokai Pro's warm dark background.
+background: "#2D2A2E"

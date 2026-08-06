@@ -1,0 +1,22 @@
+# Solarized
+# The Solarized palette by Ethan Schoonover (https://ethanschoonover.com/solarized).
+# The 8 accents are shared by Solarized's Dark and Light variants; only the base
+# (used here as the optional panel tint) differs between them.
+
+red:    "#DC322F"
+orange: "#CB4B16"
+yellow: "#B58900"
+green:  "#859900"
+blue:   "#268BD2"
+cyan:   "#2AA198"
+purple: "#6C71C4"   # Solarized's violet
+pink:   "#D33682"   # Solarized's magenta
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue
+
+# Optional panel tint. This is Solarized's dark base (base03), for a "Solarized
+# Dark" feel (pairs with a dark wallpaper / white ink). For "Solarized Light",
+# swap to the light base "#FDF6E3" (base3); or remove the line for a neutral panel.
+background: "#002B36"

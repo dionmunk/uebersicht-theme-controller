@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Example theme (reference / template)
+# ─────────────────────────────────────────────────────────────────────────────
+# A theme is just a list of named colors. The controller derives each color's RGB
+# channels and the full token contract every widget reads (status ramp, data
+# series, area-fills, accents) — you never write rgba() or wire up roles by hand.
+#
+# To create a theme: copy this file to themes/<name>.yaml, set your colors, then
+# select it with `scheme: '<Name>'` in index.coffee. The file name is the scheme
+# name lowercased with spaces turned to hyphens ('My Theme' → my-theme.yaml).
+#
+# This file itself is never loaded (nothing selects "_example"); it's just docs.
+# YAML files are not loaded as widgets, so they don't clutter Übersicht.
+#
+# IMPORTANT: values are hex and MUST be quoted — YAML treats an unquoted # as the
+# start of a comment, and every hex color starts with #.
+
+# ── Palette ──────────────────────────────────────────────────────────────────
+# These six named colors drive the shared roles. Each also gets a channel token
+# (e.g. --red-ch = "255, 59, 48") that the derived rgba() fills use.
+
+red:    "#FF3B30"   # danger  → --status-critical, --series-primary (+ their -fill)
+orange: "#FF9500"   #         → --status-elevated, --series-secondary (+ -fill)
+yellow: "#FFCC00"   #         → --status-warn,     --series-tertiary  (+ -fill)
+green:  "#34C759"   # good/ok → --status-ok, --series-quaternary (+ -fill),
+                    #           and github contribution squares (--green-ch)
+blue:   "#007AFF"   #         → network upload bar + area (--blue, --blue-fill)
+pink:   "#FF2D55"   # the default primary accent (see below)
+
+# Optional extra palette colors. Published as --purple / --teal / etc. and usable
+# as the primary/secondary accent, but not required by any role. Add any you like.
+purple: "#AF52DE"
+teal:   "#5AC8FA"
+# indigo: "#5856D6"
+# cyan:   "#8BE9FD"
+
+# ── Accent pair (optional) ─────────────────────────────────────────────────────
+# The theme's signature accents, given as the NAME of a palette color above (not a
+# hex). Widgets use these for highlight elements, separate from the functional ramps:
+#   --primary    → news bullets & hover, now-playing loved star
+#   --secondary  → complementary accent (available to accent elements)
+# If omitted, defaults are: primary → pink (else red); secondary → purple (else blue).
+primary:   pink
+secondary: purple
+
+# ── Panel background tint (optional) ────────────────────────────────────────────
+# Washes the translucent widget panels with a bit of this color, overriding the
+# neutral mode-driven tint. Omit `background` to keep the neutral panel.
+#   background-opacity — how solid the tint is, 0 to 1 (default 0.3).
+#   0 = fully transparent, 0.3 = a subtle wash, 1 = a solid opaque panel.
+# background: "#1E1E2E"
+# background-opacity: 0.3
+
+# ── Not set here ────────────────────────────────────────────────────────────────
+# Neutrals (--text, --text-secondary, --panel-bg, --panel-blur, --level-*,
+# --hairline, --dot-grid, --area-fill-*) are MODE-driven (light/dark) and shared by
+# every theme, so a theme never defines them. Widget shadows/sizes aren't themed.
+#
+# The 'monochrome' scheme is the one exception to all of this: it defines NO colors
+# and renders everything as the mode's ink at stepped opacities.

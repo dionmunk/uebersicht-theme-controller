@@ -1,0 +1,15 @@
+# Monokai
+# The original Monokai palette, created by Wimer Hazenberg (https://monokai.pro), 2006.
+# A theme is just its named colors; the controller derives channels, fills, and roles.
+
+red:    "#F92672"   # signature magenta-pink (also used as this theme's pink)
+orange: "#FD971F"
+yellow: "#E6DB74"
+green:  "#A6E22E"
+blue:   "#66D9EF"   # cyan
+purple: "#AE81FF"
+pink:   "#F92672"
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue

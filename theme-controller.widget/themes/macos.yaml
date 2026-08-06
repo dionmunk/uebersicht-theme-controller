@@ -1,0 +1,14 @@
+# macOS
+# The modern macOS accent-color palette (softer than the iOS system colors).
+
+red:    "#ee4f43"
+orange: "#f3933b"
+yellow: "#f9cc38"
+green:  "#61c262"
+teal:   "#54c4b3"
+blue:   "#4ebee5"
+pink:   "#F74F9E"
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue

@@ -1,0 +1,20 @@
+# Nord Aurora
+# The multi-hue take on Nord, built from its "Aurora" accents (with a Frost blue
+# for the blue role) by Arctic Ice Studio & Sven Greb (https://www.nordtheme.com).
+
+red:    "#BF616A"   # aurora
+orange: "#D08770"   # aurora
+yellow: "#EBCB8B"   # aurora
+green:  "#A3BE8C"   # aurora
+blue:   "#81A1C1"   # frost — network upload
+cyan:   "#88C0D0"   # frost
+teal:   "#8FBCBB"   # frost
+purple: "#B48EAD"   # aurora
+pink:   "#B48EAD"   # Nord has no pink; its aurora purple stands in
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue
+
+# Optional: tint the panels with Nord's Polar Night base.
+background: "#2E3440"

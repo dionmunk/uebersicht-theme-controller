@@ -1,0 +1,20 @@
+# Tokyo Night
+# The Tokyo Night palette by enkia (https://github.com/enkia/tokyo-night-vscode-theme).
+
+red:    "#F7768E"   # pink-red; doubles as this theme's pink
+orange: "#FF9E64"
+yellow: "#E0AF68"
+green:  "#9ECE6A"
+teal:   "#73DACA"
+cyan:   "#7DCFFF"
+blue:   "#7AA2F7"   # Tokyo Night's signature blue
+purple: "#BB9AF7"
+pink:   "#F7768E"
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue
+
+# Optional: tint the panels with Tokyo Night's deep blue-black background.
+# (add `background-opacity: <0–1>` to make the panel more/less solid; default 0.3)
+background: "#1A1B26"

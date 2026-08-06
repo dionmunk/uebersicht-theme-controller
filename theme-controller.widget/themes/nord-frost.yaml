@@ -1,0 +1,20 @@
+# Nord Frost
+# A blues-only take on Nord, built from its "Frost" palette (the four blues) by
+# Arctic Ice Studio & Sven Greb (https://www.nordtheme.com). The role slots
+# (red/orange/yellow/green) are mapped to frost shades, so the whole theme reads
+# as a cool blue gradient rather than the usual multi-hue ramp.
+
+red:    "#5E81AC"   # nord10 — deepest frost
+orange: "#81A1C1"   # nord9
+yellow: "#88C0D0"   # nord8
+green:  "#8FBCBB"   # nord7 — teal frost
+blue:   "#88C0D0"   # nord8 — network upload
+purple: "#5E81AC"   # nord10
+pink:   "#88C0D0"   # nord8 — the accent (bright frost)
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink     # bright frost
+secondary: green    # teal frost
+
+# Optional: tint the panels with Nord's Polar Night base.
+background: "#2E3440"

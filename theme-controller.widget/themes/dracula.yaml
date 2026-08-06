@@ -1,0 +1,19 @@
+# Dracula
+# The Dracula palette by Zeno Rocha and contributors (https://draculatheme.com).
+
+red:    "#FF79C6"   # Dracula's signature pink doubles as this theme's red
+orange: "#FFB86C"
+yellow: "#F1FA8C"
+green:  "#50FA7B"
+cyan:   "#8BE9FD"
+blue:   "#8BE9FD"   # Dracula has no pure blue; its cyan fills the blue role (network upload)
+purple: "#BD93F9"
+pink:   "#FF79C6"   # signature Dracula pink
+
+# Semantic accent pair (aliases into the palette above) — Dracula's iconic duo.
+primary:   pink
+secondary: purple
+
+# Optional: tints the translucent widget panels with a bit of the theme's color
+# (Dracula's dark background). Omit this line to keep the neutral mode-driven tint.
+background: "#282A36"

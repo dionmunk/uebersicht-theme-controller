@@ -1,0 +1,16 @@
+# iOS
+# The official iOS system color palette.
+
+red:    "#FF3B30"
+orange: "#FF9500"
+yellow: "#FFCC00"
+green:  "#34C759"
+teal:   "#5AC8FA"
+blue:   "#007AFF"
+indigo: "#5856D6"
+pink:   "#FF2D55"
+purple: "#AF52DE"
+
+# Semantic accent pair (aliases into the palette above).
+primary:   pink
+secondary: blue

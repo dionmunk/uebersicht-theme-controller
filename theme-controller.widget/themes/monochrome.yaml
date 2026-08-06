@@ -1,0 +1,5 @@
+# Monochrome
+# No hues. This theme intentionally defines no colors: the controller renders
+# everything as the mode's ink (content color) at stepped opacities, so it always
+# matches light/dark. Series, pink, and the network-upload blue become ink; the
+# status colors are left unset, so widgets fall back to their own ink.
